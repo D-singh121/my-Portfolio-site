@@ -1,0 +1,83 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero {
+  height: calc(100vh - 100px);
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  position: relative;
+  overflow: hidden;
+}
+.hero .wrapper {
+  height: 100%;
+  max-width: 80%;
+  margin: auto;
+}
+.hero .wrapper .text-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.hero .wrapper .text-container h2 {
+  font-size: 30px;
+  color: rebeccapurple;
+  letter-spacing: 4px;
+}
+.hero .wrapper .text-container h1 {
+  font-size: 5rem;
+}
+.hero .wrapper .text-container .buttons button {
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  margin-right: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: transparent;
+}
+.hero .wrapper .text-container img {
+  width: 3rem;
+  left: 0;
+}
+.hero .SlidingtextContainer {
+  position: absolute;
+  font-size: 10rem;
+  bottom: -1rem;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.0352941176);
+}
+.hero .imageContainer {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.hero .imageContainer img {
+  height: 120%;
+  margin-right: 5rem;
+}/*# sourceMappingURL=hero.css.map */
