@@ -1,0 +1,72 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  flex-direction: column;
+  color: black;
+}
+.sidebar .bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  background: #fff;
+}
+.sidebar .bg .links {
+  text-decoration: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background: white;
+  font-weight: 800;
+  color: black;
+}
+.sidebar .bg .links a {
+  text-decoration: none;
+}
+.sidebar button {
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  left: 25px;
+  top: 25px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}/*# sourceMappingURL=sidebar.css.map */

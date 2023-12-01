@@ -1,0 +1,49 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  height: 100px;
+}
+.navbar .wrapper {
+  height: 100%;
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .wrapper span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar .wrapper .social {
+  display: flex;
+  gap: 20px;
+}
+.navbar .wrapper .social img {
+  height: 30px;
+  width: 30px;
+}/*# sourceMappingURL=navbar.css.map */
