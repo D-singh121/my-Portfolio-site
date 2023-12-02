@@ -6,8 +6,9 @@
   background-color: #fff;
   flex-direction: column;
   color: black;
-
+  // z-index: 2;
   .bg {
+    z-index: 555;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,11 +32,9 @@
       color: black;
       // color: red($color: #000000);
 
-
-      a{
+      a {
         text-decoration: none;
       }
-
 
       // .navlink {
       //   text-decoration: none;

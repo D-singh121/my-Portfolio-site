@@ -4,7 +4,7 @@
   background: linear-gradient(180deg, #0c0c1d, #111132);
   position: relative;
   overflow: hidden;
-
+  // z-index: 3;
   .wrapper {
     height: 100%;
     max-width: 80%;
@@ -17,12 +17,13 @@
       // align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: 40px;
+      gap: 30px;
 
       h2 {
+        text-transform: uppercase;
         font-size: 30px;
         color: rebeccapurple;
-        letter-spacing: 4px;
+        letter-spacing: 10px;
       }
       h1 {
         font-size: 5rem;
@@ -40,20 +41,20 @@
       img {
         // height: 50px;
         width: 3rem;
-		left: 0;
+        left: 0;
       }
     }
   }
 
-  .SlidingtextContainer{
-	position: absolute;
-	font-size: 10rem;
-	bottom: -1rem;
-	white-space: nowrap;
-	// z-index: -2;
-	color: #ffffff09;
+  .SlidingtextContainer {
+    position: absolute;
+    font-size: 18rem;
+    bottom: -1rem;
+    white-space: nowrap;
+    color: #ffffff09;
+    width: 50%;
+    font-weight: bolder;
   }
-
 
   .imageContainer {
     height: 100%;
@@ -61,9 +62,9 @@
     top: 0;
     right: 0;
 
-	img{
-		height: 120%;
-		margin-right: 5rem;
-	}
+    img {
+      height: 120%;
+      margin-right: 5rem;
+    }
   }
 }

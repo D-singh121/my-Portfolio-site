@@ -41,12 +41,13 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 .hero .wrapper .text-container h2 {
+  text-transform: uppercase;
   font-size: 30px;
   color: rebeccapurple;
-  letter-spacing: 4px;
+  letter-spacing: 10px;
 }
 .hero .wrapper .text-container h1 {
   font-size: 5rem;
@@ -66,10 +67,12 @@ a {
 }
 .hero .SlidingtextContainer {
   position: absolute;
-  font-size: 10rem;
+  font-size: 18rem;
   bottom: -1rem;
   white-space: nowrap;
   color: rgba(255, 255, 255, 0.0352941176);
+  width: 50%;
+  font-weight: bolder;
 }
 .hero .imageContainer {
   height: 100%;

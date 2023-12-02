@@ -33,6 +33,7 @@ a {
   color: black;
 }
 .sidebar .bg {
+  z-index: 555;
   position: fixed;
   top: 0;
   left: 0;
