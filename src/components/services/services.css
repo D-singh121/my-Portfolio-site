@@ -1,0 +1,111 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.services {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services .textContainer {
+  flex: 1;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 2rem;
+}
+.services .textContainer p {
+  font-weight: 200;
+  font-size: 20px;
+  color: gray;
+  text-align: right;
+}
+.services .textContainer hr {
+  width: 200px;
+  border: none;
+  border-top: 0.5px solid gray;
+}
+.services .titleContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.services .titleContainer .title {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.services .titleContainer .title img {
+  width: 15rem;
+  height: 4rem;
+  border-radius: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.services .titleContainer .title h1 {
+  font-size: 4rem;
+  font-weight: 100;
+}
+.services .titleContainer .title button {
+  width: 15rem;
+  height: 4rem;
+  border-radius: 3rem;
+  background-color: orange;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.services .listContainer {
+  flex: 2;
+  display: flex;
+  max-width: 80%;
+  margin: auto;
+}
+.services .listContainer .box {
+  padding: 3rem;
+  border: 0.5px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.services .listContainer .box h2 {
+  margin-bottom: 1rem;
+}
+.services .listContainer .box button {
+  margin-top: 1.5rem;
+  padding: 0.6rem;
+  background-color: orange;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}/*# sourceMappingURL=services.css.map */
