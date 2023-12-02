@@ -1,0 +1,42 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.portfolio {
+  position: relative;
+}
+.portfolio .progress {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding-top: 3rem;
+  text-align: center;
+  color: orange;
+  font-size: 2rem;
+}
+.portfolio .progress .progressBar {
+  height: 0.3rem;
+  background-color: white;
+}/*# sourceMappingURL=portfolio.css.map */
