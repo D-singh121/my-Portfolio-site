@@ -1,6 +1,6 @@
 // import React from 'react'
 import './portfolio.scss'
-import { motion ,useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 const items = [
@@ -31,9 +31,28 @@ const items = [
 ];
 
 const SingleItem = ({ item }) => {
+	const ref = useRef();
+
+	const { scrollYProgress } = useScroll({
+		target: ref,
+	});
+
+	const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 	return (
 		<section>
-			{item.title}
+			<motion.div className='container' >
+				<div className='wrapper'>
+					<div className='ImageContainer' ref={ref}>
+						<img src={item.img} alt='projectImg' />
+					</div>
+					<motion.div style={{ y }} className='textcontainer'>
+						<motion.h2 >{item.title}</motion.h2>
+						<p> {item.desc}</p>
+						<button className='btn'>See More</button>
+					</motion.div>
+				</div>
+
+			</motion.div>
 		</section>
 	);
 };
@@ -42,24 +61,24 @@ const SingleItem = ({ item }) => {
 
 const Portfolio = () => {
 
-const ref = useRef();
+	const ref = useRef();
 
-const {scrollYProgress}= useScroll({
-	target:ref,
-	offset:["end end", "start start"],
-});
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["end end", "start start"],
+	});
 
-const scaleX = useSpring(scrollYProgress,{
-	stiffness:100,
-	damping:30,	
-})
+	const scaleX = useSpring(scrollYProgress, {
+		stiffness: 100,
+		damping: 30,
+	})
 
 	return (
 		<div className="portfolio" ref={ref}>
-		<div className='progress'>
-			<h1 className=''> Featured Works</h1>
-			<motion.div  style={{scaleX}}  className='progressBar'></motion.div>
-		</div>
+			<div className='progress'>
+				<h1 className=''> Featured Works</h1>
+				<motion.div style={{ scaleX }} className='progressBar'></motion.div>
+			</div>
 			{items.map((item) => (
 				<SingleItem item={item} key={item.id} />
 			))}

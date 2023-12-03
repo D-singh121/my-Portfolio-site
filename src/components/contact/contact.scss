@@ -1,0 +1,66 @@
+@import "../../app.scss";
+
+.contact {
+  height: 100%;
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+
+  .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-left: 2rem;
+
+    h1 {
+      font-size: 5rem;
+      line-height: 5rem;
+    }
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  .formContainer {
+    flex: 1;
+    position: relative;
+
+    .phoneSvg {
+      stroke: orange;
+      position: absolute;
+      margin: auto;
+      z-index: 1;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      input,
+      textarea {
+        width: 25rem;
+        padding: 1rem;
+        // font-size: 0.7rem;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 1rem;
+      }
+
+      button {
+        width: 25rem;
+
+        padding: 0.8rem;
+        border: none;
+        background-color: orange;
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+  }
+}
