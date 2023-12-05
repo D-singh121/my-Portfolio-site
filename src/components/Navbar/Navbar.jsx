@@ -34,16 +34,16 @@ const Navbar = () => {
 					</Link> */}
 
 					<a href="/">
-						<img src="/facebook.png" alt="" />
+						<img src="/facebook.png" alt="facebook" />
 					</a>
 					<a href='/'>
-						<img src="/instagram.png" alt="" />
+						<img src="/instagram.png" alt="insta" />
 					</a>
-					<a href="/">
-						<img src="/public/youtube.png" alt="" />
+					<a href="https://twitter.com/Dee_Singh121">
+						<img className="twitter" src="/twitter.png" alt="twitter" />
 					</a>
-					<a href="/">
-						<img src="/dribbble.png" alt="" />
+					<a href="https://www.linkedin.com/in/devesh-choudhary-b25a01152/">
+						<img className="linkedinog" src="/linkedinog.png" alt="linkdin" />
 					</a>
 
 

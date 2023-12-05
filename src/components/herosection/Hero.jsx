@@ -64,7 +64,7 @@ const Hero = () => {
 				Devops and Web Devloper
 			</motion.div>
 			<div className='imageContainer'>
-				<img src='../../../public/hero.png' alt='heroimage ' />
+				<img src='/heroImg.png' alt='heroimage ' />
 			</div>
 		</div>
 	)
