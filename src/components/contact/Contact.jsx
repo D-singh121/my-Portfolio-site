@@ -1,6 +1,10 @@
 import "./contact.scss"
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
+
+import emailjs from '@emailjs/browser';
+import conf from "../../conf"; // env injected;
+
 const variants = {
 	initial: {
 		y: 500,
@@ -10,33 +14,50 @@ const variants = {
 		y: 0,
 		opacity: 1,
 		transition: {
-			duration: 1,
-			staggerChildren: 0.2
+			duration: 0.5,
+			staggerChildren: 0.1
 		}
 	}
 }
-
-
-
 
 
 const Contact = () => {
 	const ref = useRef();
 	const isInview = useInView(ref, { margin: "-100px" })
 
+	const formRef = useRef();
+	const [error, setError] = useState(false);
+	const [success, setSuccess] = useState(false)
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+
+		emailjs.sendForm(conf.emailJs_ServiceId, conf.emailJs_TemplateId, formRef.current, conf.emailJs_PublicKeyId)
+			.then((result) => {
+				// setError(false)
+				setSuccess(true)
+				console.log(result.text);
+			}, (error) => {
+				setError(true);
+				console.log(error.text);
+			});
+	};
+
+
+
 	return (
 		<motion.div className="contact" variants={variants} initial="initial" whileInView="animate" ref={ref}
 		>
 
 			<motion.div className="textContainer" variants={variants}>
-				<motion.h1 whileHover={{ color: "orange" }} >Let&apos;s work together</motion.h1>
+				<motion.h1 whileHover={{ color: "#FFA500" }} >Let&apos;s work together</motion.h1>
 				<motion.div className="item" variants={variants}>
 					<h2>Mail</h2>
-					<span>Hello@1223</span>
+					<span>choudharydevesh121@gmail.com</span>
 				</motion.div>
 				<motion.div className="item" variants={variants}>
 					<h2>Address</h2>
-					<span>122.kalamboli navi mumbai</span>
+					<span>Navi mumbai ,maharashtra India 410218</span>
 				</motion.div>
 				<motion.div className="item" variants={variants}>
 					<h2>Phone</h2>
@@ -57,6 +78,7 @@ const Contact = () => {
 							fill="none"
 							initial={{ pathLength: 0 }}
 							animate={isInview && { pathLength: 1 }}
+							transition={{ duration: 3 }}
 							d="M28.189,16.504h-1.666c0-5.437-4.422-9.858-9.856-9.858l-0.001-1.664C23.021,4.979,28.189,10.149,28.189,16.504z
 								M16.666,7.856L16.665,9.52c3.853,0,6.983,3.133,6.981,6.983l1.666-0.001C25.312,11.735,21.436,7.856,16.666,7.856z M16.333,0
 								C7.326,0,0,7.326,0,16.334c0,9.006,7.326,16.332,16.333,16.332c0.557,0,1.007-0.45,1.007-1.006c0-0.559-0.45-1.01-1.007-1.01
@@ -79,12 +101,17 @@ const Contact = () => {
 					whileInView={{ opacity: 1 }}
 					transition={{ delay: 4, duration: 1 }}
 
+					ref={formRef} //** for emailjs tackling */
+					onSubmit={sendEmail}
 				>
-					<input required type="text" name="Name" placeholder="Name" />
+					<input required type="text" name="name" placeholder="Name" />
 					<input required type="email" name="email" placeholder="E-Mail" />
-					<textarea rows={8} type="text" placeholder="Message">
-					</textarea>
+					<textarea rows={8} placeholder="Message" name="message" />
+
 					<button className="btn">Submit</button>
+					{error && "Error"}
+					{success && "Success"}
+
 				</motion.form>
 			</motion.div>
 

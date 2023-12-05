@@ -15,17 +15,27 @@
 		gap: 20px;
 		margin-top: 2rem;
 
+		@include mobile {
+			align-self: center;
+			text-align: center;
+			flex-direction: column;
+		}
+
 		p {
 			font-weight: 200;
-			font-size: 20px;
+			font-size: 1.2rem;
 			color: gray;
 			text-align: right;
 		}
 
 		hr {
-			width: 200px;
+			width: 18rem;
 			border: none;
 			border-top: 0.5px solid gray;
+
+			@include mobile {
+				width: 10rem;
+			}
 		}
 	}
 
@@ -37,21 +47,42 @@
 		// max-width: 50rem;
 		margin: auto;
 
+		@include mobile {
+			width: 100%;
+		}
+
 		.title {
 			display: flex;
 			align-items: center;
 			gap: 3rem;
+
+
+			@include mobile {
+				flex-direction: column;
+				text-align: center;
+				gap: 20px;
+			}
+
 
 			img {
 				width: 15rem;
 				height: 4rem;
 				border-radius: 50px;
 				object-fit: cover;
+
+				@include mobile {
+					width: 200px;
+					height: 50px;
+				}
 			}
 
 			h1 {
 				font-size: 4rem;
 				font-weight: 100;
+
+				@include mobile {
+					font-size: 36px;
+				}
 			}
 
 			button {
@@ -62,6 +93,12 @@
 				border: none;
 				font-size: 1.2rem;
 				cursor: pointer;
+
+				@include mobile {
+					font-size: 16px;
+					width: 150px;
+					height: 50px;
+				}
 			}
 		}
 	}
@@ -71,7 +108,7 @@
 		display: flex;
 		max-width: 80%;
 		margin: auto;
-		
+
 		.box {
 			padding: 3rem;
 			border: 0.5px solid gray;
@@ -82,8 +119,22 @@
 			margin-bottom: 1rem;
 			// margin-left: .5rem;
 
+			@include mobile {
+				border: none;
+				align-items: center;
+				gap: 20px;
+				padding: 10px;
+			}
+
 			h2 {
 				margin-bottom: 1rem;
+
+			}
+
+			p {
+				@include mobile {
+					display: none;
+				}
 			}
 
 			button {
@@ -94,6 +145,15 @@
 				cursor: pointer;
 				font-size: 1rem;
 				font-weight: 500;
+
+				@include mobile {
+					background-color: transparent;
+					border: 1px solid orange;
+					border-radius: 5px;
+					color: orange;
+					width: 50%;
+					padding: 5px;
+				}
 			}
 		}
 	}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+// import { NavLink } from "react-router-dom";
 
 const variants = {
   open: {
@@ -13,6 +14,8 @@ const variants = {
     },
   },
 };
+
+
 const itemVariants = {
   open: {
     y: 0,
@@ -25,13 +28,13 @@ const itemVariants = {
 };
 
 const PageLinks = () => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
+  const items = ["Homepage", "Services", "Portfolio", "Contact"];
 
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
         <motion.a
-          href={`/${item.toLowerCase()}`}
+          href={`#${item.toLowerCase()}`}
           key={item}
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
@@ -40,6 +43,13 @@ const PageLinks = () => {
           {item}
         </motion.a>
       ))}
+
+      {/* //**** will test later */}
+      {/* <NavLink to="/">Homepage</NavLink>
+      <NavLink to="/services" >Services</NavLink>
+      <NavLink to="/portfolio" >Portfolio</NavLink>
+      <NavLink to="/about">About Us</NavLink> */}
+
     </motion.div>
   );
 };

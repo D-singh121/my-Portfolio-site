@@ -3,6 +3,8 @@ import ToggleButton from "./toggleButton/ToggleButton"
 import "./sidebar.scss"
 import { useState } from "react"
 import { motion } from 'framer-motion';
+
+
 const variants = {
 	open: {
 		clipPath: "circle(1200px at 50px 50px)",
