@@ -1,71 +1,75 @@
-import "./contact.scss"
-import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
 
-import emailjs from '@emailjs/browser';
+import "./contact.scss";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import conf from "../../conf"; // env injected;
+
 
 const variants = {
 	initial: {
 		y: 500,
-		opacity: 0
+		opacity: 0,
 	},
 	animate: {
 		y: 0,
 		opacity: 1,
 		transition: {
 			duration: 0.5,
-			staggerChildren: 0.1
-		}
-	}
-}
-
+			staggerChildren: 0.1,
+		},
+	},
+};
 
 const Contact = () => {
 	const ref = useRef();
-	const isInview = useInView(ref, { margin: "-100px" })
-
 	const formRef = useRef();
 	const [error, setError] = useState(false);
-	const [success, setSuccess] = useState(false)
+	const [success, setSuccess] = useState(false);
+
+	const isInView = useInView(ref, { margin: "-100px" });
 
 	const sendEmail = (e) => {
 		e.preventDefault();
 
-		emailjs.sendForm(conf.emailJs_ServiceId, conf.emailJs_TemplateId, formRef.current, conf.emailJs_PublicKeyId)
-			.then((result) => {
-				// setError(false)
-				setSuccess(true)
-				console.log(result.text);
-			}, (error) => {
-				setError(true);
-				console.log(error.text);
-			});
+		emailjs
+			.sendForm(conf.emailJs_ServiceId, conf.emailJs_TemplateId, formRef.current, conf.emailJs_PublicKeyId)
+			.then(
+				(result) => {
+					setSuccess(true)
+					console.log(result);
+				},
+				(error) => {
+					setError(true);
+					console.log(error);
+				}
+			);
 	};
 
-
-
 	return (
-		<motion.div className="contact" variants={variants} initial="initial" whileInView="animate" ref={ref}
+		<motion.div
+			ref={ref}
+			className="contact"
+			variants={variants}
+			initial="initial"
+			whileInView="animate"
 		>
-
 			<motion.div className="textContainer" variants={variants}>
-				<motion.h1 whileHover={{ color: "#FFA500" }} >Let&apos;s work together</motion.h1>
+				<motion.h1 variants={variants}>Let’s work together</motion.h1>
 				<motion.div className="item" variants={variants}>
 					<h2>Mail</h2>
 					<span>choudharydevesh121@gmail.com</span>
 				</motion.div>
 				<motion.div className="item" variants={variants}>
 					<h2>Address</h2>
-					<span>Navi mumbai ,maharashtra India 410218</span>
+					<span>Navi Mumbai(410218) ,Maharashtra  India</span>
 				</motion.div>
 				<motion.div className="item" variants={variants}>
 					<h2>Phone</h2>
-					<span> +91-9082444800</span>
+					<span>+91-9082444800</span>
 				</motion.div>
 			</motion.div>
-
-			<motion.div className="formContainer">
+			<div className="formContainer">
 				<motion.div
 					className="phoneSvg"
 					initial={{ opacity: 1 }}
@@ -77,7 +81,7 @@ const Contact = () => {
 							strokeWidth={0.2}
 							fill="none"
 							initial={{ pathLength: 0 }}
-							animate={isInview && { pathLength: 1 }}
+							animate={isInView && { pathLength: 1 }}
 							transition={{ duration: 3 }}
 							d="M28.189,16.504h-1.666c0-5.437-4.422-9.858-9.856-9.858l-0.001-1.664C23.021,4.979,28.189,10.149,28.189,16.504z
 								M16.666,7.856L16.665,9.52c3.853,0,6.983,3.133,6.981,6.983l1.666-0.001C25.312,11.735,21.436,7.856,16.666,7.856z M16.333,0
@@ -95,29 +99,23 @@ const Contact = () => {
 						/>
 					</svg>
 				</motion.div>
-
 				<motion.form
+					ref={formRef}
+					onSubmit={sendEmail}
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
-					transition={{ delay: 4, duration: 1 }}
-
-					ref={formRef} //** for emailjs tackling */
-					onSubmit={sendEmail}
+					transition={{ delay: 1, duration: 1 }}
 				>
-					<input required type="text" name="name" placeholder="Name" />
-					<input required type="email" name="email" placeholder="E-Mail" />
+					<input type="text" required placeholder="Name" name="name" />
+					<input type="email" required placeholder="Email" name="email" />
 					<textarea rows={8} placeholder="Message" name="message" />
-
-					<button className="btn">Submit</button>
+					<button>Submit</button>
 					{error && "Error"}
 					{success && "Success"}
-
 				</motion.form>
-			</motion.div>
-
-
+			</div>
 		</motion.div>
-	)
-}
+	);
+};
 
-export default Contact
+export default Contact;
