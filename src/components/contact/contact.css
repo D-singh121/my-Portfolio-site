@@ -1,0 +1,81 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contact {
+  height: 100%;
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+.contact .textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 2rem;
+}
+.contact .textContainer h1 {
+  font-size: 5rem;
+  line-height: 5rem;
+}
+.contact .textContainer span {
+  font-weight: 300;
+}
+.contact .formContainer {
+  flex: 1;
+  position: relative;
+}
+.contact .formContainer .phoneSvg {
+  stroke: orange;
+  position: absolute;
+  margin: auto;
+  z-index: -1;
+}
+.contact .formContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact .formContainer form input,
+.contact .formContainer form textarea {
+  width: 25rem;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 0.5rem;
+}
+.contact .formContainer form button {
+  width: 25rem;
+  font-size: large;
+  padding: 0.8rem;
+  border: none;
+  background-color: orange;
+  cursor: pointer;
+  font-weight: 600;
+}/*# sourceMappingURL=contact.css.map */

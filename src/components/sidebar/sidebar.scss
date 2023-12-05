@@ -35,6 +35,7 @@
       background: white;
       font-weight: 800;
       color: black;
+      margin-top: 0;
       // color: red($color: #000000);
 
       @include mobile{
@@ -66,7 +67,7 @@
   }
 
   button {
-    z-index: 999;
+    z-index: 1111;
     width: 50px;
     height: 50px;
     position: fixed;

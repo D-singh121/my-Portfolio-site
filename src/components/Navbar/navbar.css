@@ -35,15 +35,32 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 738px) {
+  .navbar .wrapper {
+    justify-content: flex-end;
+    max-width: 90%;
+  }
+}
 .navbar .wrapper span {
   font-size: 1.5rem;
   font-weight: bold;
 }
+@media (max-width: 738px) {
+  .navbar .wrapper span {
+    display: none;
+  }
+}
 .navbar .wrapper .social {
   display: flex;
-  gap: 20px;
+  gap: 1.2rem;
 }
 .navbar .wrapper .social img {
   height: 30px;
   width: 30px;
+}
+@media (max-width: 738px) {
+  .navbar .wrapper .social {
+    gap: 0.8rem;
+    margin-right: 0px;
+  }
 }/*# sourceMappingURL=navbar.css.map */

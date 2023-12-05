@@ -1,0 +1,39 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cursor {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: fixed;
+  z-index: 999;
+}
+@media (max-width: 738px) {
+  .cursor {
+    display: none;
+  }
+}/*# sourceMappingURL=cursor.css.map */

@@ -35,22 +35,51 @@ a {
   max-width: 80%;
   margin: auto;
 }
+@media (max-width: 738px) {
+  .hero .wrapper {
+    justify-content: center;
+    display: flex;
+  }
+}
 .hero .wrapper .text-container {
   width: 50%;
   height: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 30px;
 }
+@media (max-width: 738px) {
+  .hero .wrapper .text-container {
+    height: 50%;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+  }
+}
 .hero .wrapper .text-container h2 {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 1.8rem;
   color: rebeccapurple;
-  letter-spacing: 10px;
+  letter-spacing: 0.6rem;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+}
+@media (max-width: 738px) {
+  .hero .wrapper .text-container h2 {
+    font-size: 1.9rem;
+    letter-spacing: 0.6rem;
+  }
 }
 .hero .wrapper .text-container h1 {
   font-size: 5rem;
+}
+@media (max-width: 738px) {
+  .hero .wrapper .text-container h1 {
+    font-size: 2.9rem;
+  }
 }
 .hero .wrapper .text-container .buttons button {
   padding: 1rem;
@@ -61,14 +90,20 @@ a {
   color: #fff;
   background-color: transparent;
 }
+@media (max-width: 738px) {
+  .hero .wrapper .text-container .buttons button {
+    margin-right: 0.7rem;
+    font-weight: normal;
+  }
+}
 .hero .wrapper .text-container img {
   width: 3rem;
   left: 0;
 }
 .hero .SlidingtextContainer {
   position: absolute;
-  font-size: 18rem;
-  bottom: -1rem;
+  font-size: 50vh;
+  bottom: -5rem;
   white-space: nowrap;
   color: rgba(255, 255, 255, 0.0352941176);
   width: 50%;
@@ -80,7 +115,17 @@ a {
   top: 0;
   right: 0;
 }
+@media (max-width: 738px) {
+  .hero .imageContainer {
+    width: 100%;
+    height: 50%;
+    top: unset;
+    bottom: 0;
+  }
+}
 .hero .imageContainer img {
-  height: 120%;
-  margin-right: 5rem;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=hero.css.map */

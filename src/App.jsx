@@ -3,8 +3,8 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/herosection/Hero';
 import Parallax from './components/parallax/Parallax';
 import Services from './components/services/Services';
-// import Portfolio from "./components/portfolio/Portfolio";
-// import Contact from "./components/contact/Contact";
+import Portfolio from "./components/portfolio/Portfolio";
+import Contact from "./components/contact/Contact";
 import Cursor from './components/cursor/Cursor';
 
 const App = () => {
@@ -16,15 +16,15 @@ const App = () => {
         <Hero />
       </section>
 
-      <section ><Parallax type="services" /></section>
-      <section id="services" >
+      <section  id="services"><Parallax type="services" /></section>
+      <section  >
         <Services />
       </section>
 
-      {/* <section id='portfolio'><Parallax type="portfolio" /></section>
+       <section id='portfolio'><Parallax type="portfolio" /></section>
       <Portfolio />
 
-      <section id="contact"><Contact /></section> */}
+      {/* <section id="contact"><Contact /></section>  */}
 
 
     </div>

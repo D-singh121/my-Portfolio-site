@@ -36,7 +36,108 @@ a {
   color: orange;
   font-size: 2rem;
 }
+@media (max-width: 738px) {
+  .portfolio .progress {
+    padding-top: calc(100vh - 6rem);
+    font-size: 1.5rem;
+  }
+}
 .portfolio .progress .progressBar {
   height: 0.3rem;
   background-color: white;
+}
+.portfolio .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.portfolio .container .wrapper {
+  max-width: 100%;
+  height: 100%;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+@media (max-width: 738px) {
+  .portfolio .container .wrapper {
+    flex-direction: column;
+    gap: 2rem;
+    margin: auto;
+  }
+}
+.portfolio .container .wrapper .ImageContainer {
+  flex: 1;
+  height: 50%;
+}
+@media (max-width: 738px) {
+  .portfolio .container .wrapper .ImageContainer {
+    width: 100%;
+    max-height: 20rem;
+  }
+}
+.portfolio .container .wrapper .ImageContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 738px) {
+  .portfolio .container .wrapper .ImageContainer img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+.portfolio .container .wrapper .textcontainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (max-width: 738px) {
+  .portfolio .container .wrapper .textcontainer {
+    transform: none !important;
+    padding: 0.7rem;
+    align-items: center;
+    text-align: center;
+  }
+}
+.portfolio .container .wrapper .textcontainer h2 {
+  font-size: 3.5rem;
+}
+@media (max-width: 738px) {
+  .portfolio .container .wrapper .textcontainer h2 {
+    font-size: 2.4rem;
+  }
+}
+.portfolio .container .wrapper .textcontainer p {
+  color: gray;
+  font-size: 1.3rem;
+}
+@media (max-width: 738px) {
+  .portfolio .container .wrapper .textcontainer p {
+    font-size: 1.4rem;
+  }
+}
+.portfolio .container .wrapper .textcontainer .btn {
+  background-color: orange;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  width: 10rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+@media (max-width: 738px) {
+  .portfolio .container .wrapper .textcontainer .btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+  }
 }/*# sourceMappingURL=portfolio.css.map */

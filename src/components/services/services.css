@@ -32,23 +32,37 @@ a {
   justify-content: space-between;
 }
 .services .textContainer {
-  flex: 1;
+  flex: 0.7;
   align-self: flex-end;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1rem;
   margin-top: 2rem;
+}
+@media (max-width: 738px) {
+  .services .textContainer {
+    align-self: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 1.2rem;
+    padding-left: 2.9rem;
+  }
 }
 .services .textContainer p {
   font-weight: 200;
-  font-size: 20px;
+  font-size: 1.2rem;
   color: gray;
   text-align: right;
 }
 .services .textContainer hr {
-  width: 200px;
+  width: 18rem;
   border: none;
   border-top: 0.5px solid gray;
+}
+@media (max-width: 738px) {
+  .services .textContainer hr {
+    width: 18rem;
+  }
 }
 .services .titleContainer {
   flex: 2;
@@ -57,10 +71,22 @@ a {
   align-items: center;
   margin: auto;
 }
+@media (max-width: 738px) {
+  .services .titleContainer {
+    width: 100%;
+  }
+}
 .services .titleContainer .title {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
+}
+@media (max-width: 738px) {
+  .services .titleContainer .title {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
 }
 .services .titleContainer .title img {
   width: 15rem;
@@ -69,9 +95,31 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 738px) {
+  .services .titleContainer .title img {
+    width: 12rem;
+    height: 3.2rem;
+  }
+}
 .services .titleContainer .title h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 100;
+}
+@media (max-width: 738px) {
+  .services .titleContainer .title h1 {
+    font-size: 2rem;
+    font-weight: 100;
+  }
+}
+.services .titleContainer .title h1 b {
+  font-size: 3.8rem;
+  color: white;
+}
+@media (max-width: 738px) {
+  .services .titleContainer .title h1 b {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
 }
 .services .titleContainer .title button {
   width: 15rem;
@@ -82,11 +130,25 @@ a {
   font-size: 1.2rem;
   cursor: pointer;
 }
+@media (max-width: 738px) {
+  .services .titleContainer .title button {
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+  }
+}
 .services .listContainer {
-  flex: 2;
+  flex: 3;
   display: flex;
   max-width: 80%;
   margin: auto;
+}
+@media (max-width: 738px) {
+  .services .listContainer {
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+  }
 }
 .services .listContainer .box {
   padding: 3rem;
@@ -96,6 +158,16 @@ a {
   justify-content: space-between;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+@media (max-width: 738px) {
+  .services .listContainer .box {
+    border: none;
+    align-items: center;
+    border: 0.5px solid orange;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
 }
 .services .listContainer .box h2 {
   margin-bottom: 1rem;
@@ -108,4 +180,14 @@ a {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
+}
+@media (max-width: 738px) {
+  .services .listContainer .box button {
+    background-color: transparent;
+    border: 1px solid orange;
+    border-radius: 5px;
+    color: orange;
+    width: 50%;
+    padding: 5px;
+  }
 }/*# sourceMappingURL=services.css.map */
